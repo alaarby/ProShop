@@ -7,6 +7,10 @@ import Home from './pages/Home.tsx'
 import ShoppingCart from './pages/ShoppingCart.tsx'
 import ReviewOrder from './pages/ReviewOrder.tsx'
 import PlaceOrder from './pages/PlaceOrder.tsx'
+import SuccessPayment from './pages/SuccessPayment.tsx'
+import { CheckoutProvider } from './data/checkoutContext.tsx'
+import Signup from './pages/Signup.tsx'
+import Login from './pages/Login.tsx'
 
 const router = createBrowserRouter([
   {
@@ -17,11 +21,16 @@ const router = createBrowserRouter([
       {path: "cart", element: <ShoppingCart />},
       {path: "reviewOrder", element: <ReviewOrder />},
       {path: "placeOrder", element: <PlaceOrder />},
+      {path: "successPayment", element: <SuccessPayment />},
+      {path: "signup", element: <Signup />},
+      {path: "login", element: <Login />},
     ],   
   },
 ])
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <CheckoutProvider>
+      <RouterProvider router={router} />
+    </CheckoutProvider>
   </StrictMode>,
 )

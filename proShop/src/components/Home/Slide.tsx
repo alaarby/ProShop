@@ -6,18 +6,18 @@ interface SlideProps {
 
 const Slide = ({ product }: SlideProps) => {
   return (
-    <div className="flex justify-between items-center p-5">
-      <div className="flex flex-col">
-        <p className="text-[32px] text-neutral-800 w-[286px] h-[40px]">
+    <div className="flex justify-between items-center pl-[140px] pr-[193px] text-[#242424]">
+      <div className="flex flex-col gap-[10px]">
+        <p className="text-[32px] mt-[173px] h-[40px]">
           Save up to ${product.price}
         </p>
-        <h2 className="uppercase text-[60px] font-bold text-neutral-800 w-[530px] h-[75px]">
+        <h2 className="uppercase text-[60px] font-bold w-[530px] max-w-[700px]">
           {product.name}
         </h2>
-        <p className="text-[32px] text-neutral-800 w-[431px] min-h-[96px]">
+        <p className="text-[32px] max-w-[700px]">
           {product.description}
         </p>
-        <button className="w-[220px] h-[56px] rounded-[20px] bg-yellow-300 text-[22px] cursor-pointer">
+        <button className="w-[220px] h-[56px] rounded-[20px] bg-[#FCDD06] text-[22px] cursor-pointer">
           Shop Now
         </button>
       </div>
