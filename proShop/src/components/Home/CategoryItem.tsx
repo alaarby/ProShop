@@ -9,7 +9,7 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
       <div className="w-full h-[346px] bg-[#F7F8FC] rounded-[16px]">
         <img className="max-h-full" src={category.image} alt={category.name} />
       </div>
-      <p className="text-[#242424] test-[24px] font-semibold">{category.name}</p>
+      <p className="text-[#242424] text-[24px] font-semibold">{category.name}</p>
     </div>
   )
 

@@ -36,7 +36,7 @@ export const products: Product[] = [
     description: "High-end Android phone with a 200MP camera and S Pen support.",
     category: "Electronics",
     brand: "Samsung",
-    image: "/images/galaxy-s23-ultra.jpg",
+    image: "/images/categories/laptop.png",
     quantity: 20,
     rating: 4.7
   }, 
@@ -48,29 +48,8 @@ export const products: Product[] = [
     description: "Lightweight sneakers with a big Air unit for all-day comfort.",
     category: "Footwear",
     brand: "Nike",
-    image: "/images/nike-airmax-270-front.jpg",
+    image: "/images/categories/laptop.png",
     quantity: 50,
     rating: 4.6
   },
-  {
-    id: 4,
-    name: "Sony WH-1000XM5 Headphones",
-    price: 399,
-    description: "Industry-leading noise-cancelling wireless headphones.",
-    category: "Audio",
-    brand: "Sony",
-    image: "/images/sony-wh1000xm5.jpg",
-    quantity: 30,
-    rating: 4.9
-  },
-  {
-    id: 5,
-    name: "Adidas Ultraboost 22",
-    price: 180,
-    description: "Comfortable running shoes with responsive Boost midsole.",
-    category: "Footwear",
-    brand: "Adidas",
-    image: "/images/adidas-ultraboost-22.jpg",
-    quantity: 40
-  }
 ];

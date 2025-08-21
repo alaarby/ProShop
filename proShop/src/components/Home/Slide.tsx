@@ -11,7 +11,7 @@ const Slide = ({ product }: SlideProps) => {
         <p className="text-[32px] mt-[173px] h-[40px]">
           Save up to ${product.price}
         </p>
-        <h2 className="uppercase text-[60px] font-bold w-[530px] max-w-[700px]">
+        <h2 className="uppercase text-[60px] font-bold max-w-[700px]">
           {product.name}
         </h2>
         <p className="text-[32px] max-w-[700px]">

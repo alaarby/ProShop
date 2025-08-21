@@ -11,6 +11,8 @@ import SuccessPayment from './pages/SuccessPayment.tsx'
 import { CheckoutProvider } from './data/checkoutContext.tsx'
 import Signup from './pages/Signup.tsx'
 import Login from './pages/Login.tsx'
+import Profile from './pages/Profile.tsx'
+import ProductList from './pages/ProductsList.tsx'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,8 @@ const router = createBrowserRouter([
       {path: "successPayment", element: <SuccessPayment />},
       {path: "signup", element: <Signup />},
       {path: "login", element: <Login />},
+      {path: "profile", element: <Profile />},
+      {path: "products", element: <ProductList />},
     ],   
   },
 ])

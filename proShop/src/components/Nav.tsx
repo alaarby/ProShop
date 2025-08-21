@@ -8,7 +8,11 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
 
+  const currentUser = useSelector((state: RootState) => state.users.currentUser);
   const cartQuantity = useSelector((state: RootState) => state.cart.totalQuantity);
+
+  console.log( currentUser);
+
   return (
     <header className="bg-[#242424] flex justify-between items-center py-[18px] px-[140px] w-screen">
       <Link to="/">
@@ -22,10 +26,10 @@ const Nav = () => {
       <SearchBar />
 
       <div className="flex items-center justify-between text-white text-[13px]">
-        <Link to="/login" >
+        <Link to={ currentUser ? "/profile" : "/login"} >
           <div className="flex flex-col items-center cursor-pointer ml-[257px]">
             <IoMdPerson className="w-[20px] h-[20px]"/>
-            <p>Login / Sign up</p>
+            <p>{ currentUser ? currentUser.name : "Login / Sign up"}</p>
           </div>
         </Link>
 

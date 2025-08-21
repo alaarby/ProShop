@@ -3,9 +3,11 @@ import ProductItem from "./ProductItem";
 
 const TopRateProducts = () => {
   return (
-    <div className="flex flex-col  gap-4 p-4">
-      <h2 className="text-[32px] uppercase text-neutral-800 font-bold">Top Rated Products</h2>
-      <div className="flex flex-wrap gap-4 justify-center items-center border-[1px] border-[#fcdd06] rounded-[16px]">
+    <div className="flex flex-col mt-[63px] px-[140px] mb-[197px]">
+      <h2 className="text-[32px] uppercase text-[#242424] font-semibold">Top Rated Products</h2>
+      <hr className="w-[200px] h-[7px] bg-[#FCDD06] border-0 mt-[22px]"/>
+      <hr className="border-[1px] border-[#F2F2F2]"/>
+      <div className="grid grid-cols-3 gap-[172px] border-[1px] border-[#FCDD06] rounded-[16px] mt-[43px]">
         {
           products.map((product) => (
             <ProductItem 
