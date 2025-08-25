@@ -1,8 +1,8 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import type Product from '../data/products';
+import { v4 as uuidv4 } from "uuid";
 
-export type CartItem = Product & { quantity: number };
 interface User{
+  id: string,
   name: string,
   email: string,
   password: string,
@@ -22,16 +22,26 @@ const usersSlice  = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    registerUser(state, action:  PayloadAction<User>) {
-      state.users.push(action.payload);
+    registerUser(state, action:  PayloadAction<{ name: string; email: string; password: string }>) {
+      const { name, email, password } = action.payload;
+      const newUser: User = {
+        id: uuidv4(),
+        name,
+        email,
+        password,
+      };
+      state.users.push(newUser);
+
+      state.users.push(newUser);
     },
     login(state, action: PayloadAction<{email: string; password: string}>){
+      const { email, password } = action.payload;
       const found = state.users.find(
-        (u) => u.email === action.payload.email && u.password === action.payload.password
+        (u) => u.email === email && u.password === password
       );
       if(found){
         state.currentUser = found;
-        localStorage.setItem("currentUser", JSON.stringify(found.name));
+        localStorage.setItem("currentUser", JSON.stringify(found));
       }else{
         throw new Error("Invalid credentials");
       }

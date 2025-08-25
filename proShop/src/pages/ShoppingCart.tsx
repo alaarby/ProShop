@@ -6,7 +6,8 @@ import EmptyCart from "../components/shoppingCart/EmptyCart";
 import { Link } from "react-router-dom";
 
 const ShoppingCart = () => {
-  const { items } = useSelector((state: RootState) => state.cart);
+  const currentUser = useSelector((state:RootState) => state.users.currentUser)
+  const items = useSelector((state: RootState) => currentUser ?  state.cart[currentUser.id]?.items ?? [] : []);
   
   
     

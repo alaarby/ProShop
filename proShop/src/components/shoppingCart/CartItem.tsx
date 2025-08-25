@@ -10,12 +10,20 @@ interface CartItemProp {
 const CartItem = ({ product }: CartItemProp) => {
 
   const dispatch = useDispatch();
-  const productQuantityInCart = useSelector((state: RootState) => state.cart.items.find(item => item.id === product.id)?.quantity || 0);
+  const currentUser = useSelector((state: RootState) => state.users.currentUser);
+  const productQuantityInCart = useSelector((state: RootState) => currentUser ?  state.cart[currentUser.id].items.find(item => item.id === product.id)?.quantity || 0 : 0);
   const discount = product.discount ?? 0;
+
+  if (!currentUser || !currentUser.id) {
+    return null;
+  }
   
   return (
     <div className="flex justify-between items-center w-[1226px] h-[242px] bg-neutral-100 rounded-[16px] relative p-4">
-      <button className="absolute top-2 right-2 text-[24px] text-black w-[32px] h-[32px] cursor-pointer" onClick={() => dispatch(removeItem({ id: product.id }))}>
+      <button 
+        className="absolute top-2 right-2 text-[24px] text-black w-[32px] h-[32px] cursor-pointer" 
+        onClick={() => dispatch(removeItem({ userId: currentUser.id, id: product.id }))}
+      >
         x
       </button>
       <img 
@@ -27,13 +35,19 @@ const CartItem = ({ product }: CartItemProp) => {
         {product.name}
       </h3>
       <div className="flex items-center justify-between w-[204px] h-[40px] bg-white">
-        <button className="w-[48px] h-[40px] flex items-center justify-center cursor-pointer"  onClick={() => dispatch(decrementQuantity({ id: product.id }))}>
+        <button 
+          className="w-[48px] h-[40px] flex items-center justify-center cursor-pointer"  
+          onClick={() => dispatch(decrementQuantity({ userId: currentUser.id, id: product.id }))}
+        >
           -
         </button>
         <span className="text-[24px] text-neutral-800 w-[40px] text-center">
           {productQuantityInCart}
         </span>
-        <button className="w-[48px] h-[40px] flex items-center justify-center cursor-pointer" onClick={() => dispatch(incrementQuantity({ id: product.id }))}>
+        <button 
+          className="w-[48px] h-[40px] flex items-center justify-center cursor-pointer" 
+          onClick={() => dispatch(incrementQuantity({ userId: currentUser.id, id: product.id }))}
+        >
           +
         </button>
       </div>

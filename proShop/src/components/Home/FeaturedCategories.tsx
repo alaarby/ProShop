@@ -11,7 +11,7 @@ const FeaturedCategories = () => {
   return (
   <div className="flex flex-col mx-[140px] mt-[60px] relative">
     <h2 className="text-[32px] uppercase text-[#242424] font-semibold">Featured Categories</h2>
-    <div className="grid grid-cols-4 gap-[14px] absolute right-0 top-[26px]">
+    <div className="flex gap-[14px] absolute right-0 top-[26px]">
       {categories.map((_, i) => (
         <button key={i} onClick={() => setCurr(i)} className="cursor-pointer">
           <IoEllipseOutline
@@ -20,7 +20,7 @@ const FeaturedCategories = () => {
         </button>
       ))}
     </div>
-    <div className="flex justify-between mt-[51px]">
+    <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-between mt-[51px]">
       {categories.map((category) => (
         <CategoryItem
           key={category.id}
