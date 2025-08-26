@@ -31,9 +31,17 @@ const LoginForm = () => {
     <div className="flex flex-col w-[474px] justify-between">
       <h2 className="text-[60px] text-[#242424]">Login.</h2>
       <p className="text-[32px] text-[#707070] mt-[16px]">Login with your data that you entered during registration</p>
-      <form onSubmit={handleLogin} className="flex flex-col gap-[30px] w-[398px]">
+      <form 
+        onSubmit={handleLogin} 
+        className="flex flex-col gap-[30px] w-[398px]"
+      >
         <div className="flex flex-col gap-[10px] mt-[52px]">
-          <label htmlFor="email" className="text-[22px] text-[#242424]">Enter your email address</label>
+          <label 
+            htmlFor="email" 
+            className="text-[22px] text-[#242424]"
+          >
+            Enter your email address
+          </label>
           <input 
             type="text" 
             placeholder="name@example.com" 
@@ -44,7 +52,12 @@ const LoginForm = () => {
           />
         </div>
         <div className="flex flex-col gap-[10px]">
-          <label htmlFor="password" className="text-[22px] text-[#242424]">Enter your password</label>
+          <label 
+            htmlFor="password" 
+            className="text-[22px] text-[#242424]"
+          >
+            Enter your password
+          </label>
           <input 
             type="password" 
             name="password" 
@@ -58,8 +71,17 @@ const LoginForm = () => {
           Login
         </button>
         <div className="flex items-center justify-center">
-          <input type="checkbox" className="w-[18px] h-[18px]" name="rememberme"/>
-          <label htmlFor="rememberme" className="ml-[13px] text-[22px] text-[#707070]">Remember me</label>
+          <input 
+            type="checkbox" 
+            className="w-[18px] h-[18px]" 
+            name="rememberme"
+          />
+          <label 
+            htmlFor="rememberme" 
+            className="ml-[13px] text-[22px] text-[#707070]"
+          >
+            Remember me
+          </label>
         </div>
         <button className="text-[22px] text-[#242424]">
           Forgot your password?

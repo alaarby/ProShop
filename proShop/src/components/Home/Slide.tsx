@@ -1,10 +1,7 @@
 import type Product from "../../data/products";
 
-interface SlideProps {
-  product: Product;
-}
 
-const Slide = ({ product }: SlideProps) => {
+const Slide = (product: Product) => {
   return (
     <div className="flex justify-between items-center px-5 lg:pl-[140px] md:px-[70px] lg:pr-[193px] text-[#242424]">
       <div className="flex flex-col gap-[10px]">
@@ -22,7 +19,11 @@ const Slide = ({ product }: SlideProps) => {
         </button>
       </div>
       <div>
-        <img className="object-fill w-[627px] h-[644px]" src={product.image} alt={product.name} />
+        <img 
+          className="object-fill w-[627px] h-[644px]"   
+          src={product.image} 
+          alt={product.name} 
+        />
       </div>
     </div>
   );

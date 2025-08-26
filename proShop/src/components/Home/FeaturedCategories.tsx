@@ -10,12 +10,18 @@ const FeaturedCategories = () => {
 
   return (
   <div className="flex flex-col mx-[140px] mt-[60px] relative">
-    <h2 className="text-[32px] uppercase text-[#242424] font-semibold">Featured Categories</h2>
+    <h2 className="text-[32px] uppercase text-[#242424] font-semibold">
+      Featured Categories
+    </h2>
     <div className="flex gap-[14px] absolute right-0 top-[26px]">
       {categories.map((_, i) => (
-        <button key={i} onClick={() => setCurr(i)} className="cursor-pointer">
+        <button 
+          key={i} 
+          onClick={() => setCurr(i)} 
+          className="cursor-pointer"
+        >
           <IoEllipseOutline
-          className={`rounded-full w-[14px] h-[14px] transition-all ${ curr === i ? "text-[#FCDD06] bg-[#FCDD06]" : "text-[#707070] bg-[#707070] opacity-30"}`}
+            className={`rounded-full w-[14px] h-[14px] transition-all ${ curr === i ? "text-[#FCDD06] bg-[#FCDD06]" : "text-[#707070] bg-[#707070] opacity-30"}`}
           />
         </button>
       ))}
@@ -24,7 +30,7 @@ const FeaturedCategories = () => {
       {categories.map((category) => (
         <CategoryItem
           key={category.id}
-          category={category}
+          {...category}
         />
       ))
       }

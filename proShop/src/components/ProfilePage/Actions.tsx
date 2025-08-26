@@ -19,9 +19,11 @@ const Actions = () => {
           alt=""
           className="w-[137px] h-[137px] rounded-full border-[1px] border-[#FCDD06]"
           />
-        <h2 className="text-[32px] text-[#242424]">Amy Mayer</h2> 
+        <h2 className="text-[32px] text-[#242424]">
+          Amy Mayer
+        </h2> 
       </div>
-      <ul className="flex flex-col gap-[30px] items-start justify-between mt-[33px] ml-[13px] text-[24px] text-[#242424]">
+      <ul className="flex flex-col gap-[30px] items-start justify-between mt-[33px] ml-[13px] text-[24px] text-[#242424] cursor-pointer">
         <li>
           My Orders
         </li>

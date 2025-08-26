@@ -13,6 +13,10 @@ import Signup from './pages/Signup.tsx'
 import Login from './pages/Login.tsx'
 import Profile from './pages/Profile.tsx'
 import ProductList from './pages/ProductsList.tsx'
+import Wishlist from './pages/Wishlist.tsx'
+import { Provider } from 'react-redux'
+import { store } from './redux/store.ts'
+import NotFound from './pages/NotFound.tsx'
 
 const router = createBrowserRouter([
   {
@@ -28,13 +32,17 @@ const router = createBrowserRouter([
       {path: "login", element: <Login />},
       {path: "profile", element: <Profile />},
       {path: "products", element: <ProductList />},
+      {path: "wishlist", element: <Wishlist />},
+      { path: '*', element: <NotFound /> }
     ],   
   },
 ])
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <CheckoutProvider>
-      <RouterProvider router={router} />
-    </CheckoutProvider>
+    <Provider store={store}> 
+      <CheckoutProvider>
+        <RouterProvider router={router} />
+      </CheckoutProvider>
+    </Provider>
   </StrictMode>,
 )

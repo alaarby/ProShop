@@ -11,8 +11,8 @@ const FeaturedProducts = () => {
         {
           products.map((product) => (
             <ProductItem 
+              {...product}
               key={product.id}
-              product={product}
             />
           ))
         }

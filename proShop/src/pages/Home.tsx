@@ -5,17 +5,10 @@ import TopRateProducts from "../components/Home/TopRateProducts";
 const Home = () => {
   return (
     <div className="flex flex-col bg-white">
-      <Carousel>
-      </Carousel>
-      <FeaturedCategories>
-        
-      </FeaturedCategories>
-      <FeaturedProducts>
-
-      </FeaturedProducts>
-      <TopRateProducts>
-
-      </TopRateProducts>
+      <Carousel />
+      <FeaturedCategories />
+      <FeaturedProducts />
+      <TopRateProducts />
     </div>
   )
 }

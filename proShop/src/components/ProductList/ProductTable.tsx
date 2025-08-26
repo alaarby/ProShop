@@ -20,24 +20,27 @@ const ProductTable = () => {
       <tbody className="text-[22px] text-[#242424] pl-[35px]">
         {
           products.map((product) => (
-            <tr className=" h-[62px] even:bg-[#F2F2F2]" key={product.id}>
-                <td>#{product.id}</td>
-                <td>{product.name}</td>
-                <td>${product.price.toFixed(2)}</td>
-                <td>{product.category}</td>
-                <td>
-                  <div className="flex gap-[16px]">
-                    <button className="w-[24px] h-[24px] bg-[#FFFFFF] cursor-pointer">
-                      <MdEdit className="text-[#000000]"/>
-                    </button>
-                    <button 
-                      className="w-[24px] h-[24px] bg-[#FC4059] rounded-[6px] cursor-pointer flex justify-center items-center" 
-                      onClick={() => {dispatch(removeProduct({ id: product.id }))}}
-                    >
-                      <MdDelete className="text-[#FFFFFF]"/>
-                    </button>
-                  </div>
-                </td>
+            <tr 
+              className=" h-[62px] even:bg-[#F2F2F2]" 
+              key={product.id}
+            >
+              <td>#{product.id}</td>
+              <td>{product.name}</td>
+              <td>${product.price.toFixed(2)}</td>
+              <td>{product.category}</td>
+              <td>
+                <div className="flex gap-[16px]">
+                  <button className="w-[24px] h-[24px] bg-[#FFFFFF] cursor-pointer">
+                    <MdEdit className="text-[#000000]"/>
+                  </button>
+                  <button 
+                    className="w-[24px] h-[24px] bg-[#FC4059] rounded-[6px] cursor-pointer flex justify-center items-center" 
+                    onClick={() => {dispatch(removeProduct({ id: product.id }))}}
+                  >
+                    <MdDelete className="text-[#FFFFFF]"/>
+                  </button>
+                </div>
+              </td>
             </tr>
         ))
       }

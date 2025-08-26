@@ -117,6 +117,7 @@ const cartSlice = createSlice({
           totalPrice: 0,
           totalPriceWithDiscount: 0,
       }
+      console.log("hi");
     }
   }
 })

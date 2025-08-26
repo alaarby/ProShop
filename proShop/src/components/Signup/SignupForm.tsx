@@ -59,7 +59,7 @@ const SignupForm = () => {
 
       if (error instanceof Yup.ValidationError) {
         error.inner.forEach((err) => {
-           if (err.path) newErrors[err.path] = err.message;
+          if (err.path) newErrors[err.path] = err.message;
         });
       setErrors(newErrors);
       }
@@ -77,7 +77,10 @@ const SignupForm = () => {
         onSubmit={handleSubmit}
         className="w-[398px] flex flex-col gap-[30px]">
         <div className="flex flex-col gap-[10px]">
-          <label htmlFor="name" className="text-[22px] text-[#242424]">
+          <label 
+            htmlFor="name" 
+            className="text-[22px] text-[#242424]"
+          >
             Name
           </label>
           <input 
@@ -91,7 +94,10 @@ const SignupForm = () => {
           {errors.name && <p className="text-red-500">{errors.name}</p>}
         </div>
         <div className="flex flex-col gap-[10px]">
-          <label htmlFor="email" className="text-[22px] text-[#242424]">
+          <label 
+            htmlFor="email" 
+            className="text-[22px] text-[#242424]"
+          >
             Enter your email address
           </label>
           <input 
@@ -105,7 +111,10 @@ const SignupForm = () => {
           {errors.email && <p className="text-red-500">{errors.email}</p>}
         </div>
         <div className="flex flex-col gap-[10px]">
-          <label htmlFor="password" className="text-[22px] text-[#242424]">
+          <label 
+            htmlFor="password" 
+            className="text-[22px] text-[#242424]"
+          >
             Enter your password
           </label>
           <input 
@@ -118,7 +127,10 @@ const SignupForm = () => {
           {errors.password && <p className="text-red-500">{errors.password}</p>}
         </div>
         <div className="flex flex-col gap-[10px]">
-          <label htmlFor="confirmPassword" className="text-[22px] text-[#242424]">
+          <label 
+            htmlFor="confirmPassword" 
+            className="text-[22px] text-[#242424]"
+          >
             Confirm your password
           </label>
           <input 

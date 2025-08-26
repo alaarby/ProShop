@@ -34,26 +34,37 @@ const Nav = () => {
           <SearchBar />
         </div>
 
-        <div className="hidden md:flex  items-center gap-[32px] justify-between text-white text-[13px]">
-          <Link to={ currentUser ? "/profile" : "/login"} >
+        <div className="hidden md:flex items-center gap-[32px] justify-between text-white text-[13px]">
+          <Link to={currentUser ? "/profile" : "/login"} >
             <div className="flex flex-col items-center cursor-pointer">
               <IoMdPerson className="w-[20px] h-[20px]"/>
-              <p>{ currentUser ? currentUser.name : "Login / Sign up"}</p>
+              <p>
+                {currentUser ? currentUser.name : "Login / Sign up"}
+              </p>
             </div>
           </Link>
-
+          <Link to="/wishlist">
           <div className="flex flex-col items-center cursor-pointer relative">
             <FaBookmark className="w-[20px] h-[20px]"/>
-            <p>Wishlist</p>
-            <span className="absolute -top-2 right-2 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]">{wishlist.length}</span>
+            <p>
+              Wishlist
+            </p>
+            <span className="absolute -top-2 right-2 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]">
+              {wishlist.length}
+            </span>
           </div>
+          </Link>
           <Link to="/cart">
             <div className="flex flex-col items-center cursor-pointer relative">
               <IoMdCart  className="w-[20px] h-[20px]"/>
               <p>
                 Cart
               </p>
-              <span className="absolute -top-2 -right-1 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]"><p>{cartQuantity}</p></span>
+              <span className="absolute -top-2 -right-1 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]">
+                <span>
+                  {cartQuantity}
+                </span>
+              </span>
             </div>
           </Link>
         </div>
@@ -69,27 +80,41 @@ const Nav = () => {
         <div className="md:hidden mt-4 flex flex-col gap-6 text-white text-[14px]">
           <SearchBar />
 
-          <Link to={currentUser ? "/profile" : "/login"} onClick={() => setMenuOpen(false)}>
+          <Link 
+            to={currentUser ? "/profile" : "/login"} 
+            onClick={() => setMenuOpen(false)}
+          >
             <div className="flex items-center gap-2">
               <IoMdPerson className="w-[20px] h-[20px]" />
-              <p>{currentUser?.name ?? "Login / Sign up"}</p>
+              <p>
+                {currentUser?.name ?? "Login / Sign up"}
+              </p>
             </div>
           </Link>
 
           <div className="flex items-center gap-2 relative">
             <FaBookmark className="w-[20px] h-[20px]" />
-            <p>Wishlist</p>
+            <p>
+              Wishlist
+            </p>
             <span className="absolute -top-2 left-20 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]">
-              <p>0</p>
+              <span>
+                {wishlist.length}
+              </span>
             </span>
           </div>
 
-          <Link to="/cart" onClick={() => setMenuOpen(false)}>
+          <Link 
+            to="/cart" 
+            onClick={() => setMenuOpen(false)}
+          >
             <div className="flex items-center gap-2 relative">
               <IoMdCart className="w-[20px] h-[20px]" />
-              <p>Cart</p>
+              <p>
+                Cart
+              </p>
               <span className="absolute -top-2 left-12 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]">
-                <p>{cartQuantity}</p>
+                {cartQuantity}
               </span>
             </div>
           </Link>
