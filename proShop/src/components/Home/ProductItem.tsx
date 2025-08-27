@@ -14,10 +14,10 @@ const ProductItem = (product: Product) => {
   const wishlist = useSelector((state: RootState) => currentUser ? state.wishlist[currentUser.id] ?? [] : [])
 
   return (
-    <div className="flex flex-col justify-between items-center h-[655px] relative py-[35px] bg-white rounded-[16px]">
+    <div className="flex flex-col justify-between items-center h-[655px] relative py-3 lg:py-[35px] bg-white rounded-[16px]">
       {
         discount > 0 &&
-        <span className="absolute top-[19px] right-[22px] text-[24px] text-white bg-[#FC4059] w-[87px] h-[87px] rounded-full justify-center items-center flex font-semibold">
+        <span className="absolute top-[19px] right-[22px] text-[18px] lg:text-[24px] text-white bg-[#FC4059] w-[50px] h-[50px] lg:w-[87px] lg:h-[87px] rounded-full justify-center items-center flex font-semibold">
           -{product.discount}%
         </span>
       }
@@ -34,7 +34,7 @@ const ProductItem = (product: Product) => {
       </div>
       {
         discount > 0 ?
-        <p className="text-[30px] text-[#242424] flex gap-[14px] items-center font-semibold">
+        <p className="text-[30px] text-[#242424] flex flex-col lg:flex-row gap-[14px] items-center font-semibold">
         <span className="text-[#FC4059]">
           ${(product.price * (1 - discount / 100)).toFixed(2)}
         </span>
@@ -47,9 +47,9 @@ const ProductItem = (product: Product) => {
           ${product.price.toFixed(2)}
         </span>
       }
-      <div className="flex gap-[13px] items-center">
+      <div className="flex gap-[13px] justify-center items-center w-full">
         <button 
-          className={`w-[54px] h-[62px] rounded-[10px] cursor-pointer flex justify-center items-center ${wishlist.some((p) => p.id === product.id) ? "bg-[#FCDD06]" : "bg-[#F2F2F2]"} `}
+          className={`w-3/12 xl:w-[54px] h-[62px] rounded-[10px] cursor-pointer flex justify-center items-center ${wishlist.some((p) => p.id === product.id) ? "bg-[#FCDD06]" : "bg-[#F2F2F2]"} `}
           onClick={() => {if (currentUser) {
               dispatch(toggleToWishlist({ userId: currentUser.id, product }));
             } else {
@@ -59,7 +59,7 @@ const ProductItem = (product: Product) => {
           <CiBookmark className="h-[32px] w-[32px]"/>
         </button>
         <button
-          className="text-[24px] text-[#242424] w-[324px] h-[62px] bg-[#F2F2F2] rounded-[10px] cursor-pointer flex justify-center items-center"
+          className="text-[24px] text-[#242424] w-7/12 xl:w-[324px] h-[62px] bg-[#F2F2F2] rounded-[10px] cursor-pointer flex justify-center items-center"
           onClick={() => {
             if (currentUser) {
               dispatch(addItem({ userId: currentUser.id, product }));

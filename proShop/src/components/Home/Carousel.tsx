@@ -18,8 +18,8 @@ const Carousel = () => {
         style={{ transform: `translateX(-${curr * 100}%)` }}>
         {products.map((product) => (
           <div 
-            className="w-full flex-shrink-0">
             key={product.id} 
+            className="w-full flex-shrink-0">
             <Slide {...product} />
           </div>
         ))}

@@ -20,7 +20,7 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#242424] py-[18px] px-6 md:px-[80px] lg:px-[140px]">
+    <header className="bg-[#242424] py-[18px] px-6 md:px-[70px] lg:px-[100px] xl:px-[140px]">
       <div className="flex justify-between items-center">
         <Link to="/">
           <h1 className="text-[#FCDD06] font-bold text-[28px] md:text-[40px]">Pro
@@ -30,9 +30,7 @@ const Nav = () => {
           </h1>
         </Link>
 
-        <div className="hidden md:block">
-          <SearchBar />
-        </div>
+        <SearchBar />
 
         <div className="hidden md:flex items-center gap-[32px] justify-between text-white text-[13px]">
           <Link to={currentUser ? "/profile" : "/login"} >
