@@ -29,8 +29,9 @@ const Nav = () => {
             </span>
           </h1>
         </Link>
-
-        <SearchBar />
+        <div className="hidden md:block">
+          <SearchBar />
+        </div>
 
         <div className="hidden md:flex items-center gap-[32px] justify-between text-white text-[13px]">
           <Link to={currentUser ? "/profile" : "/login"} >

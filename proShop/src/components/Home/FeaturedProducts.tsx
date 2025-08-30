@@ -7,7 +7,7 @@ const FeaturedProducts = () => {
       <h2 className="text-[28px] lg:text-[32px] uppercase text-[#242424] font-semibold">Featured Products</h2>
       <hr className="w-[200px] h-[7px] bg-[#FCDD06] border-0 mt-[12px] lg:mt-[22px]"/>
       <hr className="border-[1px] border-[#F2F2F2]"/>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[40px] mt-4 lg:mt-[43px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[40px] mt-4 lg:mt-[43px]">
         {
           products.map((product) => (
             <ProductItem 

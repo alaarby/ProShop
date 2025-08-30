@@ -24,7 +24,7 @@ const Carousel = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center bottom-[27px] relative">
+      <div className="flex justify-center bottom-[27px] md:relative mt-10 lg:mt-16">
         <button 
           onClick={prev} 
           className="cursor-pointer mr-[23px]"

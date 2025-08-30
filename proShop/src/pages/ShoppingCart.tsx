@@ -12,37 +12,36 @@ const ShoppingCart = () => {
   
     
   return (
-    <div className="mx-[140px] flex flex-col">
-    <div className="mt-[30px] text-[24px] flex">
-      <Link to="/">
-        <p className="text-[#707070]">Back / </p>
-      </Link>
-      <Link to="/cart">
-        <span className="text-[#242424]"> Shopping Cart</span>
-      </Link>
-    </div>
-    <div>
-
-    {
-      items.length === 0 ? (
-        <EmptyCart />
-      ):(
-        <div className="flex gap-[30px] mt-[30px]">
-          <div className="flex flex-col w-[1226px] gap-[30px]">
-            {
-              items.map((item) => (
-                <CartItem 
-                key={item.id} 
-                product={item}
-                />
-              ))
-            }
-          </div>
+    <div className="px-5 md:px-[70px] lg:px-[100px] xl:px-[140px] flex flex-col gap-3 md:gap-[30px]">
+      <div className="mt-3 md:mt-[32px] text-[18px] md:text-[24px] flex">
+        <Link to="/">
+          <p className="text-[#707070]">Back / </p>
+        </Link>
+        <Link to="/cart">
+          <span className="text-[#242424]"> Shopping Cart</span>
+        </Link>
+      </div>
+      <div>
+      {
+        items.length === 0 ? (
+          <EmptyCart />
+        ):(
+          <div className="flex flex-col xl:flex-row gap-3 md:gap-[30px]">
+            <div className="flex flex-col w-full xl:w-[1226px] gap-3 md:gap-[30px]">
+              {
+                items.map((item) => (
+                  <CartItem 
+                  key={item.id} 
+                  product={item}
+                  />
+                ))
+              }
+            </div>
             <TotalCartValue />
-        </div>
-      )
-    }
-    </div>
+          </div>
+        )
+      }
+      </div>
     </div>
   )
 }

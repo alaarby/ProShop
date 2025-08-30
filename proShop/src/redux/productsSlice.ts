@@ -5,9 +5,11 @@ import { products } from '../data/products';
 
 type State = {
   products: Product[],
+  searchQuery: string,
 }
 const initialState: State = {
   products: products,
+  searchQuery: ""
 };
 
 const productsSlice = createSlice({
@@ -26,8 +28,11 @@ const productsSlice = createSlice({
     clearProducts(state) {
       state.products = [];
     },
+    setSearchQuery(state, action: PayloadAction<string>) {
+      state.searchQuery = action.payload;
+    },
   }
 })
 
-export const { addProduct, removeProduct, clearProducts } = productsSlice.actions;
+export const { addProduct, removeProduct, clearProducts, setSearchQuery } = productsSlice.actions;
 export default productsSlice.reducer;

@@ -10,6 +10,8 @@ export default interface Product {
   images?: string[];       
   quantity: number;
   rating?: number;
+  colors?:string[];
+  slug: string;
 }
 export const products: Product[] = [
   {
@@ -22,12 +24,13 @@ export const products: Product[] = [
     brand: "Apple",
     image: "/images/categories/laptop.png",
     images: [
-      "/images/iphone15-front.jpg",
-      "/images/iphone15-back.jpg",
-      "/images/iphone15-side.jpg"
+      "/images/categories/laptop.png",
+      "/images/categories/laptop.png",
+      "/images/categories/laptop.png"
     ],
     quantity: 15,
-    rating: 4.8
+    rating: 4.8,
+    slug:"iphone-15-pro"
   },
   {
     id: 2,
@@ -38,7 +41,8 @@ export const products: Product[] = [
     brand: "Samsung",
     image: "/images/categories/laptop.png",
     quantity: 20,
-    rating: 4.7
+    rating: 4.7,
+    slug: "samsung-S23-ultra"
   }, 
   {
     id: 3,
@@ -50,6 +54,7 @@ export const products: Product[] = [
     brand: "Nike",
     image: "/images/categories/laptop.png",
     quantity: 50,
-    rating: 4.6
+    rating: 4.6,
+    slug: "nike-air-max"
   },
 ];
