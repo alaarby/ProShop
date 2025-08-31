@@ -17,7 +17,7 @@ const ProductItem = (product: Product) => {
     <div className="flex flex-col justify-between items-center h-[655px] relative py-3 lg:py-[35px] bg-white rounded-[16px]">
       {
         discount > 0 &&
-        <span className="absolute top-[19px] right-[22px] text-[18px] lg:text-[24px] text-white bg-[#FC4059] w-[50px] h-[50px] lg:w-[87px] lg:h-[87px] rounded-full justify-center items-center flex font-semibold">
+        <span className="absolute top-[19px] right-[22px] text-[18px] lg:text-[24px] text-white bg-[#FC4059] w-[60px] h-[60px] lg:w-[87px] lg:h-[87px] rounded-full justify-center items-center flex font-semibold">
           -{product.discount}%
         </span>
       }

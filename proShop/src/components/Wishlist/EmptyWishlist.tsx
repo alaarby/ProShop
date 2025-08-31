@@ -6,19 +6,19 @@ const EmptyWishlist = () => {
       <img 
         src="/images/emptyWishlist.png" 
         alt="empty wishlist"
-        className="w-[500px] h-[500px]" 
+        className="max-w-[500px] max-h-[500px]" 
       />
-      <h2 className="text-[32px] text-[#242424] font-bold">
+      <h2 className="text-[28px] md:text-[32px] text-[#242424] font-bold">
         Your Wish List is empty
       </h2>
-      <p className="text-[24px] text-[#242424]">
+      <p className="text-[20px] md:text-[24px] text-[#242424]">
         seems like you don't have wishes here.
       </p>
-      <p className="text-[24px] text-[#242424]">
+      <p className="text-[20px] md:text-[24px] text-[#242424]">
         Make a wish
       </p>
       <Link to="/">
-        <button className="w-[250px] h-[40px] text-[22px] bg-[#FCDD06] rounded-[20px] flex items-center justify-center">
+        <button className="w-6/12 md:w-[250px] h-[40px] text-[20px] md:text-[24px] bg-[#FCDD06] rounded-[20px] mx-auto">
           Start Shopping
         </button>
       </Link>

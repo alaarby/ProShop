@@ -28,12 +28,12 @@ const LoginForm = () => {
   };
 
   return(
-    <div className="flex flex-col w-[474px] justify-between">
-      <h2 className="text-[60px] text-[#242424]">Login.</h2>
-      <p className="text-[32px] text-[#707070] mt-[16px]">Login with your data that you entered during registration</p>
+    <div className="flex flex-col w-full md:w-[474px] justify-between">
+      <h2 className="text-[40px] lg:text-[60px] text-[#242424]">Login.</h2>
+      <p className="text-[28px] lg:text-[32px] text-[#707070] mt-[16px]">Login with your data that you entered during registration</p>
       <form 
         onSubmit={handleLogin} 
-        className="flex flex-col gap-[30px] w-[398px]"
+        className="flex flex-col gap-[30px] w-10/12"
       >
         <div className="flex flex-col gap-[10px] mt-[52px]">
           <label 

@@ -18,7 +18,7 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store.ts'
 import NotFound from './pages/NotFound.tsx'
 import Products from './pages/Products.tsx'
-import ProductPage from './components/ItemPage/ProductPage.tsx'
+import ProductPage from './components/ItemPage/Product.tsx'
 
 const router = createBrowserRouter([
   {
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {path: "wishlist", element: <Wishlist />},
       {path: "wishlist", element: <Wishlist />},
       {path: "products", element: <Products />},
-      {path: "products/:slug", element: <ProductPage />},
+      {path: "products/:slug", element: <Products />},
       { path: '*', element: <NotFound /> }
     ],   
   },
