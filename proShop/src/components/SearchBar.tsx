@@ -17,7 +17,7 @@ const SearchBar = () => {
     p.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
   return (
-    <div className="relative md:min-w-[250px] lg:min-w-[450px] xl:min-w-[705px] min-w-[200px]">
+    <div className="relative w-full">
       <div className="search-bar rounded-md bg-white w-full h-[40px] flex items-center justify-between">
         <input 
           type="text" 
@@ -32,7 +32,7 @@ const SearchBar = () => {
           onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
           />
         <button 
-          className="search-button bg-[#FCDD06] rounded-r-[6px] w-[152px] h-[40px] flex items-center justify-center text-[11px] lg:text-[16px] text-[#000000] font-semibold cursor-pointer outline-0 py-[10px]"
+          className="search-button bg-[#FCDD06] rounded-r-[6px] md:w-[80px] lg:w-[152px] h-[40px] flex items-center justify-center text-[11px] lg:text-[16px] text-[#000000] font-semibold cursor-pointer outline-0 py-[10px]"
           > 
           <CiSearch className="w-[18px] h-[18px]"/>  
           Search

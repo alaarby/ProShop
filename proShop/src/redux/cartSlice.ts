@@ -79,10 +79,10 @@ const cartSlice = createSlice({
           cart.totalQuantity += 1;
           cart.totalPrice += item.price;
           if(item.discount != undefined){
-            cart.totalPriceWithDiscount -= (item.price * (1 - item.discount / 100)) * item.quantity
+            cart.totalPriceWithDiscount += (item.price * (1 - item.discount / 100))
           }
           else{
-            cart.totalPriceWithDiscount -= item.price * item.quantity;
+            cart.totalPriceWithDiscount += item.price ;
           }
         }
       },
@@ -102,10 +102,10 @@ const cartSlice = createSlice({
           cart.totalQuantity -= 1;
           cart.totalPrice -= item.price;
           if(item.discount != undefined){
-            cart.totalPriceWithDiscount -= (item.price * (1 - item.discount / 100)) * item.quantity
+            cart.totalPriceWithDiscount -= (item.price * (1 - item.discount / 100));
           }
           else{
-            cart.totalPriceWithDiscount -= item.price * item.quantity;
+            cart.totalPriceWithDiscount -= item.price;
           }
         }
       },

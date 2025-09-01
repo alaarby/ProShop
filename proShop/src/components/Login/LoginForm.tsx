@@ -33,7 +33,7 @@ const LoginForm = () => {
       <p className="text-[28px] lg:text-[32px] text-[#707070] mt-[16px]">Login with your data that you entered during registration</p>
       <form 
         onSubmit={handleLogin} 
-        className="flex flex-col gap-[30px] w-10/12"
+        className="flex flex-col gap-[30px] w-full md:w-10/12"
       >
         <div className="flex flex-col gap-[10px] mt-[52px]">
           <label 
@@ -89,7 +89,7 @@ const LoginForm = () => {
         <hr className="border-[1px] bg-[#707070]"/>
       </form>
       <Link to="/signup">
-        <button className="w-[220px] h-[56px] rounded-[20px] border-[3px] border-[#FCDD06] text-[22px] text-[#242424] mt-[82px] ml-[89px] mr-[165px]">
+        <button className="w-[220px] h-[56px] rounded-[20px] border-[3px] mx-auto block border-[#FCDD06] text-[22px] text-[#242424] mt-[82px] md:ml-[89px] md:mr-[165px] mb-5">
           Sign Up Now
         </button>
       </Link>

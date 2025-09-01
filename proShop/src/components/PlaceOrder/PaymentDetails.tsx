@@ -11,7 +11,7 @@ const PaymentDetails = () => {
       <span className="text-[22px] text-[#707070] absolute top-0 right-0 underline">
         Change
       </span>
-      <span className="text-[16px] text-[#242424] mt-[30px] ml-[60px]">
+      <span className="text-[16px] text-[#242424] mt-[30px] ml-6 md:ml-[60px]">
         **** {payment.cardNumber.slice(-4)}
       </span>
     </div>

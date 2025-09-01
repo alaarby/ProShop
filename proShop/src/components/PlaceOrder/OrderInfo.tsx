@@ -4,7 +4,7 @@ const OrderInfo = () => {
 
   const{ shipping, payment } = useCheckout();
   return(
-    <div className="w-[289px] h-[154px] flex flex-col items-start">
+    <div className="w-full max-w-[289px] flex flex-col items-start">
       <h3 className="text-[24px] text-[#242424] font-semibold">
         Shipping Address
       </h3>

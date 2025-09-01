@@ -8,7 +8,7 @@ const Login = () =>{
       <img 
         src="/images/login.png" 
         alt="Login" 
-        className="hidden lg:block max-w-7/12 w-[857px] max-h-7/12 h-[729px]"
+        className="hidden lg:block max-w-6/12 w-[857px] max-h-[729px]"
       />
     </div>
   )

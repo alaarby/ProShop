@@ -14,7 +14,7 @@ const Details = () => {
       <span className="underline text-[22px] text-[#707070] absolute top-0 right-0">
         Change
       </span>
-      <div className="flex flex-col w-[461px] mt-[16px] gap-[38px]">
+      <div className="flex flex-col w-full max-w-[461px] mt-[16px] gap-[38px]">
         {
           cart?.items.map((item) => (
             <OrederItem {...item}/>

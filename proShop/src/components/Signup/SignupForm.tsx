@@ -66,16 +66,16 @@ const SignupForm = () => {
     }
   }
   return (
-    <div className="flex flex-col w-[474px] justify-between">
-      <h2 className="text-[60px] text-[#242424]">
+    <div className="flex flex-col w-full md:w-[474px] justify-between items-start">
+      <h2 className="text-[40px] lg:text-[60px] text-[#242424]">
         Signup.
       </h2>
-      <p className="text-[32px] text-[#707070] mt-[16px]">
+      <p className="text-[28px] lg:text-[32px] text-[#707070] mt-[16px]">
         Sign up and get exclusive offers from us
       </p>
       <form 
         onSubmit={handleSubmit}
-        className="w-[398px] flex flex-col gap-[30px]">
+        className="w-full md:w-10/12 flex flex-col gap-[30px]">
         <div className="flex flex-col gap-[10px]">
           <label 
             htmlFor="name" 
@@ -147,7 +147,7 @@ const SignupForm = () => {
         </button>
         <hr className="border-[1px] border-[#707070] w-full"/>
       </form>
-      <p className="text-[22px] text-[#707070] ml-[70px] mr-[138px] mt-[60px]">
+      <p className="text-[18px] md:text-[22px] text-[#707070] mx-auto block md:ml-[70px] md:mr-[138px] mt-5 lg:mt-[60px] mb-5">
         Have an account ? 
         <Link to="/login">
           <button className="text-[#242424] hover:underline">

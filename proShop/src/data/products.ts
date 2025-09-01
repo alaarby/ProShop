@@ -1,5 +1,5 @@
 export default interface Product {
-  id: number;
+  id: string;
   name: string;
   price: number;
   discount?: number;
@@ -15,7 +15,7 @@ export default interface Product {
 }
 export const products: Product[] = [
   {
-    id: 1,
+    id: "1",
     name: "iPhone 15 Pro",
     price: 1299,
     discount: 10,
@@ -33,7 +33,7 @@ export const products: Product[] = [
     slug:"iphone-15-pro"
   },
   {
-    id: 2,
+    id: "2",
     name: "Samsung Galaxy S23 Ultra",
     price: 1199,
     description: "High-end Android phone with a 200MP camera and S Pen support.",
@@ -45,7 +45,7 @@ export const products: Product[] = [
     slug: "samsung-S23-ultra"
   }, 
   {
-    id: 3,
+    id: "3",
     name: "Nike Air Max 270",
     price: 150,
     discount: 5,

@@ -21,7 +21,7 @@ const Nav = () => {
 
   return (
     <header className="bg-[#242424] py-[18px] px-6 md:px-[70px] lg:px-[100px] xl:px-[140px]">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center gap-5">
         <Link to="/">
           <h1 className="text-[#FCDD06] font-bold text-[28px] md:text-[40px]">Pro
             <span className="text-white">
@@ -29,7 +29,7 @@ const Nav = () => {
             </span>
           </h1>
         </Link>
-        <div className="hidden md:block">
+        <div className="hidden md:block w-full max-w-[768px]">
           <SearchBar />
         </div>
 

@@ -5,12 +5,12 @@ import ShippingAddress from "../components/ReviewOrder/ShippingAddress";
 const ReviewOrder = () => {
 
   return(
-    <div className="flex flex-col pl-[140px] relative w-[1517px] mb-[61px] mt-[44px]">
-      <h2 className="text-[32px] text-[#242424] font-bold">
+    <div className="flex flex-col px-5 md:px-[70px] lg:px-[100px] xl:pl-[140px] xl:pr-[263px] relative mb-[61px] mt-4 md:mt-[44px]">
+      <h2 className="text-[28px] md:text-[32px] text-[#242424] font-bold">
         Review Order
       </h2>
       <Head />
-      <div className="flex items-start justify-between mr-[400px] mt-[44px] w-full">
+      <div className="flex flex-col lg:flex-row items-start justify-between gap-[30px] mt-4 md:mt-[32px]">
         <ShippingAddress />
         <OrderDetails />
       </div>

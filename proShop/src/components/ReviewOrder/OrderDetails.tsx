@@ -10,9 +10,9 @@ const OrderDetails = () => {
   const { handleSubmit } = useCheckout(); 
 
   return(
-    <div className="w-[537px] flex flex-col items-end mt-[30px] ml-[36px]">
-      <div className="w-full rounded-[16px] bg-[#F2F2F2] flex flex-col  justify-center  py-[35px] px-[22px] relative">
-        <h3 className="text-[32px] text-[#242424] text-starts font-bold">
+    <div className="w-full lg:max-w-[537px] flex flex-col items-center md:items-end">
+      <div className="w-full rounded-[16px] bg-[#F2F2F2] flex flex-col  justify-center px-12 py-10 lg:py-[35px] lg:px-[22px] relative">
+        <h3 className="text-[28px] md:text-[32px] text-[#242424] text-center md:text-start font-bold">
           Order Details
         </h3>
         <span className="text-[22px] text-[#707070] absolute top-[42px] right-[29px] underline">
@@ -25,7 +25,7 @@ const OrderDetails = () => {
             ))
           }
         </div>
-        <div className="w-[477px] h-[128px] flex flex-col gap-[16px] mt-[86px]">
+        <div className="flex flex-col gap-[16px] mt-[86px]">
           <div className="text-[16px] text-[#707070] flex items-center justify-between">
             <span>
               Subtotal
@@ -61,7 +61,7 @@ const OrderDetails = () => {
         </div>
       </div>
       <Link to="/placeOrder">
-        <button className="w-[324px] h-[62px] flex justify-center items-center bg-[#FCDD06] text-[24px] text-[#242424] rounded-[10px] mt-[30px]" onSubmit={handleSubmit}>Review Order</button>
+        <button className="w-[200px] md:w-[324px] h-[62px] block mx-auto bg-[#FCDD06] text-[24px] text-[#242424] rounded-[10px] mt-[30px]" onSubmit={handleSubmit}>Review Order</button>
       </Link>
     </div>
   )
