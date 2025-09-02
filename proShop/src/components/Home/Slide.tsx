@@ -3,9 +3,9 @@ import type Product from "../../data/products";
 
 const Slide = (product: Product) => {
   return (
-    <div className="flex justify-between items-center px-5 lg:pl-[140px] md:px-[70px] xl:pr-[193px] text-[#242424]">
+    <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full pt-[14px] px-5 lg:px-[100px] md:px-[70px] xl:px-[140px] 2xl:pr-[193px] text-[#242424]">
       <div className="flex flex-col gap-[10px]">
-        <p className="text-[22px] lg:text-[32px] mt-5 lg:mt-[173px] h-[40px]">
+        <p className="text-[22px] lg:text-[32px] font-semibold">
           Save up to ${product.price}
         </p>
         <h2 className="uppercase text-[28px] lg:text-[60px] font-bold max-w-[700px]">
@@ -14,16 +14,15 @@ const Slide = (product: Product) => {
         <p className="text-[22px] lg:text-[32px] max-w-[700px]">
           {product.description}
         </p>
-        <button className="max-w-[220px] h-[56px] rounded-[20px] bg-[#FCDD06] text-[18px] md:text-[22px] cursor-pointer">
+        <button className="max-w-[220px] h-[40px] md:h-[56px] rounded-[20px] bg-[#FCDD06] text-[18px] md:text-[22px] cursor-pointer">
           Shop Now
         </button>
       </div>
         <img 
-          className="object-fill w-5/12 lg:w-[627px] h-10/12 lg:h-[644px]"   
+          className="object-fill w-5/12 xl:w-[627px] h-10/12 xl:h-[644px]"   
           src={product.image} 
           alt={product.name} 
         />
-      
     </div>
   );
 }

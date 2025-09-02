@@ -13,23 +13,23 @@ const Carousel = () => {
     setCurr((curr) => (curr === products.length - 1 ? 0 : curr + 1));
 
   return (
-    <div className="overflow-hidden relative bg-[#F2F2F2] w-full ">
-      <div className="flex transition-transform ease-out duration-500 w-full"
+    <div className="overflow-hidden relative bg-[#F2F2F2] w-full">
+      <div className="flex transition-transform ease-out duration-500 w-full h-full"
         style={{ transform: `translateX(-${curr * 100}%)` }}>
         {products.map((product) => (
           <div 
             key={product.id} 
-            className="w-full flex-shrink-0">
+            className="w-full flex-shrink-0 flex">
             <Slide {...product} />
           </div>
         ))}
       </div>
-      <div className="flex justify-center bottom-[27px] md:relative mt-10 lg:mt-16">
+      <div className="flex justify-center bottom-[27px] md:relative my-5 md:mb-0 lg:mt-0">
         <button 
           onClick={prev} 
           className="cursor-pointer mr-[23px]"
         >
-          <IoIosArrowBack className="w-[38px] h-[38px]"/>
+          <IoIosArrowBack className="w-[25px] h-[25px] md:w-[38px] md:h-[38px]"/>
         </button>
         <div className="flex gap-[21px]">
           {products.map((_, i) => (
@@ -38,7 +38,7 @@ const Carousel = () => {
               onClick={() => setCurr(i)} 
               className="cursor-pointer">
               <IoEllipseOutline
-              className={`rounded-full w-[25px] h-[25px] transition-all ${ curr === i ? "text-yellow-300 bg-yellow-300" : "text-[#707070] bg-[#707070] opacity-30"}`}
+              className={`rounded-full w-[20px] h-[20px] md:w-[25px] md:h-[25px] transition-all ${ curr === i ? "text-yellow-300 bg-yellow-300" : "text-[#707070] bg-[#707070] opacity-30"}`}
               />
             </button>
           ))}
@@ -47,7 +47,7 @@ const Carousel = () => {
           onClick={next} 
           className="cursor-pointer ml-[23px]"
         >
-          <IoIosArrowForward className="w-[38px] h-[38px]"/>
+          <IoIosArrowForward className="w-[25px] h-[25px] md:w-[38px] md:h-[38px]"/>
         </button>
       </div>  
 

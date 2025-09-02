@@ -18,7 +18,7 @@ const SearchBar = () => {
   );
   return (
     <div className="relative w-full">
-      <div className="search-bar rounded-md bg-white w-full h-[40px] flex items-center justify-between">
+      <div className="rounded-md bg-white w-full h-[40px] flex items-center">
         <input 
           type="text" 
           placeholder="Search products..." 
@@ -32,7 +32,7 @@ const SearchBar = () => {
           onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
           />
         <button 
-          className="search-button bg-[#FCDD06] rounded-r-[6px] md:w-[80px] lg:w-[152px] h-[40px] flex items-center justify-center text-[11px] lg:text-[16px] text-[#000000] font-semibold cursor-pointer outline-0 py-[10px]"
+          className="bg-[#FCDD06] rounded-r-[6px] px-4 h-[40px] flex items-center justify-center text-[11px] lg:text-[16px] text-[#000000] font-semibold cursor-pointer outline-0 py-[10px] w-full max-w-[152px]"
           > 
           <CiSearch className="w-[18px] h-[18px]"/>  
           Search
@@ -47,23 +47,23 @@ const SearchBar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -5 }}
               transition={{ duration: 0.2 }}
-              className="absolute left-0 mt-1 w-full bg-white rounded-md shadow-lg overflow-y-auto z-10"
+              className="absolute left-0 mt-1 w-full max-h-60 overflow-y-auto bg-white text-black  rounded-md shadow-lg z-10"
             >
               {
                 filteredProducts.length > 0 ?(
                   filteredProducts.map(p => (
-                    <Link to={`/products/${p.slug}`}>
-                      <li
+                    <li
                       key={p.id}
-                      className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                      className="px-4 py-2 cursor-pointer hover:bg-gray-100 z-10"
                       onClick={() => {
                         dispatch(setSearchQuery(p.name));
                         setShowDropdown(false);
                       }}
-                      >
-                      {p.name}
-                      </li>
-                    </Link>
+                    >
+                      <Link to={`/products/${p.slug}`} className="block w-full">
+                        {p.name}
+                      </Link>
+                    </li>
                   ))
                 ): (
                   <li className="px-4 py-2 text-gray-500">No results found</li>

@@ -4,6 +4,7 @@ import { addItem } from "../../redux/cartSlice";
 import { CiBookmark } from "react-icons/ci";
 import type { RootState } from "../../redux/store";
 import { toggleToWishlist } from "../../redux/wishlistSlice";
+import ProductRating from "./ProductRating";
 
 
 const ProductItem = (product: Product) => {
@@ -30,7 +31,7 @@ const ProductItem = (product: Product) => {
         {product.name}
       </h3>
       <div className="stars">
-
+        <ProductRating rating={product.rating} />
       </div>
       {
         discount > 0 ?

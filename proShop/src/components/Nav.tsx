@@ -35,7 +35,7 @@ const Nav = () => {
 
         <div className="hidden md:flex items-center gap-[32px] justify-between text-white text-[13px]">
           <Link to={currentUser ? "/profile" : "/login"} >
-            <div className="flex flex-col items-center cursor-pointer">
+            <div className="flex flex-col items-center cursor-pointer min-w-[88px]">
               <IoMdPerson className="w-[20px] h-[20px]"/>
               <p>
                 {currentUser ? currentUser.name : "Login / Sign up"}
@@ -96,7 +96,7 @@ const Nav = () => {
             <p>
               Wishlist
             </p>
-            <span className="absolute -top-2 left-20 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]">
+            <span className="absolute -top-2 left-3 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]">
               <span>
                 {wishlist.length}
               </span>
@@ -112,7 +112,7 @@ const Nav = () => {
               <p>
                 Cart
               </p>
-              <span className="absolute -top-2 left-12 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]">
+              <span className="absolute -top-2 left-3 bg-[#FCDD06] rounded-full w-[15px] h-[15px] flex justify-center items-center text-[10px]">
                 {cartQuantity}
               </span>
             </div>

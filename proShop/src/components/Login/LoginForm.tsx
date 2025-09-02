@@ -89,7 +89,7 @@ const LoginForm = () => {
         <hr className="border-[1px] bg-[#707070]"/>
       </form>
       <Link to="/signup">
-        <button className="w-[220px] h-[56px] rounded-[20px] border-[3px] mx-auto block border-[#FCDD06] text-[22px] text-[#242424] mt-[82px] md:ml-[89px] md:mr-[165px] mb-5">
+        <button className="w-[220px] h-[56px] rounded-[20px] border-[3px] mx-auto block border-[#FCDD06] text-[22px] text-[#242424] mt-10 md:mt-[82px] md:ml-[89px] md:mr-[165px] mb-10">
           Sign Up Now
         </button>
       </Link>

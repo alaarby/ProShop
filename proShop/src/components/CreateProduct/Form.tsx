@@ -79,10 +79,14 @@ export default function ProductForm() {
   }
 
   return (
-    <div className=" bg-[#F2F2F2] w-full flex flex-col rounded-[16px] py-[67px] px-[35px]">
-      <form className="w-full flex flex-col lg:flex-row gap-[50px]">
+    <div className=" bg-[#F2F2F2] w-full flex flex-col rounded-[16px] xl:pb-[67px] px-[35px]">
+      <form 
+        id="productForm"
+        onSubmit={handleSubmit}
+        className="w-full flex flex-col lg:flex-row gap-[50px]"
+      >
         {/* Left: Images */}
-        <div className="flex flex-col gap-[16px] w-full max-w-[378px] self-center lg:self-start">
+        <div className="flex flex-col gap-[16px] w-full max-w-[378px] self-center lg:self-start mt-10 lg:mt-[103px]">
           <label className="block border-[1px] border-dashed border-[#707070] p-6 text-center cursor-pointer">
             <input
               type="file"
@@ -131,7 +135,7 @@ export default function ProductForm() {
         </div>
 
         {/* Right: Form fields */}
-        <div className="flex flex-col gap-[16px] flex-1">
+        <div className="flex flex-col gap-[16px] flex-1 lg:mt-[67px]">
           <h2 className="text-[32px] font-semibold text-[#242424]">
             Product Details
           </h2>
@@ -245,11 +249,6 @@ export default function ProductForm() {
           </div>
         </div>
       </form>
-      <button
-        onClick={handleSubmit}
-        className="w-full md:w-[293px] h-[60px] mt-[30px] bg-[#4BB543] text-white text-[24px] font-semibold rounded-[6px] self-end">
-        Create Product
-      </button>
     </div>
   );
 }

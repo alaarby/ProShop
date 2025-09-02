@@ -29,7 +29,7 @@ export const products: Product[] = [
       "/images/categories/laptop.png"
     ],
     quantity: 15,
-    rating: 4.8,
+    rating: 4.5,
     slug:"iphone-15-pro"
   },
   {
@@ -54,7 +54,7 @@ export const products: Product[] = [
     brand: "Nike",
     image: "/images/categories/laptop.png",
     quantity: 50,
-    rating: 4.6,
+    rating: 3.5,
     slug: "nike-air-max"
   },
 ];

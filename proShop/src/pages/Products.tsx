@@ -1,5 +1,5 @@
 import FeaturedProducts from "../components/Home/FeaturedProducts";
-import Product from "../components/ItemPage/Product";
+import Product from "../components/ProductPage/Product";
 
 const Products = () => {
   return(

@@ -18,8 +18,8 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addItem(state, action:  PayloadAction<{ userId: string; product: Product }>) {
-      const { userId, product } = action.payload;
+    addItem(state, action:  PayloadAction<{ userId: string; product: Product; quantity?: number }>) {
+      const { userId, product, quantity = 1 } = action.payload;
       const { id, price, discount} = product;
 
       if(!state[userId]){
@@ -32,24 +32,24 @@ const cartSlice = createSlice({
       }
 
       const cart = state[userId];
-      const existiongItem = cart.items.find(item => item.id === id);
-      if(existiongItem){
-        existiongItem.quantity += 1;
+      const existingItem = cart.items.find(item => item.id === id);
+      if(existingItem){
+        existingItem.quantity += quantity;
       }
       else{
-        cart.items.push({ ...product, quantity: 1 });
+        cart.items.push({ ...product, quantity });
       }
 
-      cart.totalQuantity += 1;
-      cart.totalPrice += price;
+      cart.totalQuantity += quantity;
+      cart.totalPrice += price * quantity;
       if(discount != undefined){
-        cart.totalPriceWithDiscount += price * (1 - discount / 100);
+        cart.totalPriceWithDiscount += price * (1 - discount / 100) * quantity;
       }
       else{
-        cart.totalPriceWithDiscount += price;
+        cart.totalPriceWithDiscount += price * quantity;
       }
     },
-    removeItem(state, action:  PayloadAction<{ userId: string; id: number}>) {
+    removeItem(state, action:  PayloadAction<{ userId: string; id: string}>) {
       const { userId, id } = action.payload;
       const cart = state[userId];
       if(!cart) return;
@@ -68,7 +68,7 @@ const cartSlice = createSlice({
         cart.items.splice(index, 1);
       }
       },
-      incrementQuantity(state, action: PayloadAction<{ userId: string; id: number}>) {
+      incrementQuantity(state, action: PayloadAction<{ userId: string; id: string}>) {
         const { userId, id } = action.payload;
         const cart = state[userId];
         if(!cart) return;
@@ -86,7 +86,7 @@ const cartSlice = createSlice({
           }
         }
       },
-      decrementQuantity(state, action: PayloadAction<{ userId: string; id: number }>) {
+      decrementQuantity(state, action: PayloadAction<{ userId: string; id: string }>) {
         const { userId, id } = action.payload;
         const cart = state[userId];
         if (!cart) return;
